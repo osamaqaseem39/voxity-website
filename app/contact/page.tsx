@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import Button from "@/components/Button";
+import SMTPForm from "@/components/SMTPForm";
 import { motion } from "framer-motion";
 
 export default function ContactPage() {
@@ -111,6 +112,32 @@ export default function ContactPage() {
                 </Button>
               </GlassCard>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SMTP Configuration Section */}
+      <section className="py-20 relative border-y border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="text-center mb-8">
+              <p className="text-base font-semibold text-[#e21b1b] uppercase tracking-wider mb-3">
+                Email Configuration
+              </p>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+                <span className="gradient-text">SMTP Settings</span>
+              </h2>
+              <p className="text-gray-400 text-xl">
+                Configure your email server settings
+              </p>
+            </div>
+            <SMTPForm />
           </motion.div>
         </div>
       </section>
