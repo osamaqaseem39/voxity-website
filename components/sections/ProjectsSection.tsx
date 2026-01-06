@@ -300,7 +300,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       )}
                       
                       {/* Deliverables and Services in same row */}
-                      {(project.deliverables?.length > 0 || project.services?.length > 0) && (
+                      {((project.deliverables?.length ?? 0) > 0 || (project.services?.length ?? 0) > 0) && (
                         <div className="w-full flex gap-2 mt-1">
                           {project.deliverables && project.deliverables.length > 0 && (
                             <div className="flex-1 min-w-0">
