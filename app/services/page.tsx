@@ -16,22 +16,22 @@ export default function ServicesPage() {
       <Navigation />
 
       {/* Services Section */}
-      <section className="py-20 relative grid-background overflow-visible min-h-screen">
+      <section className="py-12 sm:py-16 md:py-20 relative grid-background overflow-visible min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-12"
           >
-            <p className="text-sm font-semibold text-[#e21b1b] uppercase tracking-wider mb-3">
+            <p className="text-xs sm:text-sm md:text-base font-semibold text-[#e21b1b] uppercase tracking-wider mb-2 sm:mb-3">
               What We Offer
             </p>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4">
               <span className="gradient-text">Our Services</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
               Comprehensive Web3 solutions tailored to your project&apos;s needs
             </p>
           </motion.div>

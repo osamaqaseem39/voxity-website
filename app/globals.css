@@ -26,11 +26,23 @@ body {
   font-family: var(--font-squada-one), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  font-size: 1.125rem; /* 18px base instead of 16px */
+  font-size: 0.875rem; /* 14px base on mobile */
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem; /* 16px on small screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.125rem; /* 18px on large screens */
+  }
 }
 
 @layer utilities {
@@ -108,7 +120,7 @@ body {
   }
   
   .markdown-content h1 {
-    @apply text-5xl md:text-6xl font-bold mb-6 mt-8 text-white;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 mt-6 sm:mt-8 text-white;
     background: linear-gradient(135deg, #880c0c 0%, #aa0f0f 50%, #e21b1b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -116,15 +128,15 @@ body {
   }
   
   .markdown-content h2 {
-    @apply text-4xl md:text-5xl font-bold mb-4 mt-8 text-white;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 mt-6 sm:mt-8 text-white;
   }
   
   .markdown-content h3 {
-    @apply text-3xl md:text-4xl font-semibold mb-3 mt-6 text-white;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 sm:mb-3 mt-4 sm:mt-6 text-white;
   }
   
   .markdown-content p {
-    @apply text-white leading-relaxed mb-4 text-xl;
+    @apply text-white leading-relaxed mb-3 sm:mb-4 text-base sm:text-lg lg:text-xl;
   }
   
   .markdown-content ul {

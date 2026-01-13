@@ -55,7 +55,7 @@ export default function Navigation() {
                 alt="Voxity"
                 width={120}
                 height={40}
-                className="h-8 w-auto"
+                className="h-6 sm:h-7 md:h-8 w-auto"
                 priority
               />
             </motion.div>
@@ -79,11 +79,11 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-3"
+            className="md:hidden text-white p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>

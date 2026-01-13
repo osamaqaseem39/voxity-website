@@ -17,7 +17,7 @@ import {
 
 export default function AnalyticsSection() {
   return (
-    <section className="py-20 relative grid-background">
+    <section className="py-12 sm:py-16 md:py-20 relative grid-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -26,13 +26,13 @@ export default function AnalyticsSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-base font-semibold text-[#e21b1b] uppercase tracking-wider mb-3">
+          <p className="text-xs sm:text-sm md:text-base font-semibold text-[#e21b1b] uppercase tracking-wider mb-2 sm:mb-3">
             Analytics
           </p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4">
             <span className="gradient-text">Decoding Web3 Impact with Analytics</span>
           </h2>
-          <p className="text-gray-400 text-xl max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-2">
             Data-driven insights to measure and optimize your Web3 growth
           </p>
         </motion.div>
@@ -63,20 +63,20 @@ export default function AnalyticsSection() {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-3 group-hover:text-[#e21b1b] transition-colors"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-2 sm:mb-3 group-hover:text-[#e21b1b] transition-colors"
               >
                 {stat.value}
               </motion.h3>
-              <p className="text-white text-lg font-medium">{stat.label}</p>
+              <p className="text-white text-sm sm:text-base md:text-lg font-medium">{stat.label}</p>
             </motion.div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           <GlassCard>
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-3xl font-bold text-white">Engagement Metrics</h3>
-              <Activity className="text-[#e21b1b]" size={28} />
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Engagement Metrics</h3>
+              <Activity className="text-[#e21b1b]" size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
             </div>
             <div className="space-y-6">
               {[
@@ -105,9 +105,9 @@ export default function AnalyticsSection() {
           </GlassCard>
 
           <GlassCard>
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-3xl font-bold text-white">Performance Metrics</h3>
-              <BarChart3 className="text-[#e21b1b]" size={28} />
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">Performance Metrics</h3>
+              <BarChart3 className="text-[#e21b1b]" size={20} className="sm:w-6 sm:h-6 md:w-7 md:h-7" />
             </div>
             <div className="space-y-6">
               {[
@@ -130,7 +130,7 @@ export default function AnalyticsSection() {
                     </div>
                     <div>
                       <p className="text-gray-300 text-base">{metric.label}</p>
-                      <p className="text-white text-2xl font-bold group-hover:text-[#e21b1b] transition-colors">
+                      <p className="text-white text-lg sm:text-xl md:text-2xl font-bold group-hover:text-[#e21b1b] transition-colors">
                         {metric.value}
                       </p>
                     </div>
@@ -142,12 +142,12 @@ export default function AnalyticsSection() {
           </GlassCard>
         </div>
 
-        <GlassCard className="mb-12">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h3 className="text-3xl font-bold text-white mb-2">Growth Trajectory</h3>
-              <p className="text-gray-400 text-base">Last 6 months performance</p>
-            </div>
+          <GlassCard className="mb-8 sm:mb-12">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 sm:mb-8 gap-4">
+              <div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1 sm:mb-2">Growth Trajectory</h3>
+                <p className="text-gray-400 text-sm sm:text-base">Last 6 months performance</p>
+              </div>
             <div className="flex gap-2">
               {["6M", "3M", "1M"].map((period) => (
                 <button
@@ -222,10 +222,10 @@ export default function AnalyticsSection() {
                 </div>
                 <span className="text-2xl font-bold text-[#e21b1b]">{insight.stat}</span>
               </div>
-              <h4 className="text-xl font-semibold text-white mb-2 group-hover:text-[#e21b1b] transition-colors">
+              <h4 className="text-lg sm:text-xl font-semibold text-white mb-2 group-hover:text-[#e21b1b] transition-colors">
                 {insight.title}
               </h4>
-              <p className="text-gray-400 text-base leading-relaxed">{insight.description}</p>
+              <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{insight.description}</p>
             </motion.div>
           ))}
         </div>

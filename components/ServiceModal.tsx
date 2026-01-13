@@ -65,40 +65,40 @@ export default function ServiceModal({
             className="relative z-10 w-full max-w-3xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="glass-strong rounded-2xl w-full max-h-[90vh] overflow-hidden border border-white/20">
+            <div className="glass-strong rounded-xl sm:rounded-2xl w-full max-h-[90vh] overflow-hidden border border-white/20">
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-white/10">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-gradient-to-br from-[#880c0c]/30 to-[#e21b1b]/30">
-                    <Icon className="text-[#e21b1b]" size={32} />
+              <div className="flex items-center justify-between p-4 sm:p-5 md:p-6 border-b border-white/10">
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0">
+                  <div className="p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#880c0c]/30 to-[#e21b1b]/30 flex-shrink-0">
+                    <Icon className="text-[#e21b1b]" size={24} className="sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white">{title}</h2>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white truncate">{title}</h2>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-3 rounded-lg hover:bg-white/10 transition-colors text-gray-400 hover:text-white"
+                  className="p-2 sm:p-2.5 md:p-3 rounded-lg hover:bg-white/10 transition-colors text-gray-400 hover:text-white flex-shrink-0 ml-2"
                   aria-label="Close modal"
                 >
-                  <X size={32} />
+                  <X size={20} className="sm:w-7 sm:h-7 md:w-8 md:h-8" />
                 </button>
               </div>
 
               {/* Content */}
-              <div className="p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
-                <p className="text-gray-300 text-xl leading-relaxed mb-8">
+              <div className="p-4 sm:p-5 md:p-6 overflow-y-auto max-h-[calc(90vh-100px)]">
+                <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8">
                   {description}
                 </p>
 
                 {features && features.length > 0 && (
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-semibold text-white mb-4 uppercase tracking-wider">
+                  <div className="mb-6 sm:mb-8">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3 sm:mb-4 uppercase tracking-wider">
                       Key Features
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 sm:space-y-3">
                       {features.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-3 text-gray-300">
-                          <span className="text-[#e21b1b] mt-1 flex-shrink-0 text-xl">▸</span>
-                          <span className="text-lg">{feature}</span>
+                        <li key={index} className="flex items-start gap-2 sm:gap-3 text-gray-300">
+                          <span className="text-[#e21b1b] mt-0.5 sm:mt-1 flex-shrink-0 text-base sm:text-lg md:text-xl">▸</span>
+                          <span className="text-sm sm:text-base md:text-lg">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -107,14 +107,14 @@ export default function ServiceModal({
 
                 {benefits && benefits.length > 0 && (
                   <div>
-                    <h3 className="text-2xl font-semibold text-white mb-4 uppercase tracking-wider">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3 sm:mb-4 uppercase tracking-wider">
                       Benefits
                     </h3>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 sm:space-y-3">
                       {benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-3 text-gray-300">
-                          <span className="text-[#e21b1b] mt-1 flex-shrink-0 text-xl">✓</span>
-                          <span className="text-lg">{benefit}</span>
+                        <li key={index} className="flex items-start gap-2 sm:gap-3 text-gray-300">
+                          <span className="text-[#e21b1b] mt-0.5 sm:mt-1 flex-shrink-0 text-base sm:text-lg md:text-xl">✓</span>
+                          <span className="text-sm sm:text-base md:text-lg">{benefit}</span>
                         </li>
                       ))}
                     </ul>

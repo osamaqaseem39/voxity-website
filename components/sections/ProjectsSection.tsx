@@ -117,7 +117,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   const opacities = [0.6, 0.8, 1, 0.8, 0.6]; // opacity: outer cards more transparent
 
   return (
-    <section id="projects" className="py-20 relative border-y border-white/10 bg-[#880c0c] overflow-hidden">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 relative border-y border-white/10 bg-[#880c0c] overflow-hidden">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -126,15 +126,15 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <p className="text-base font-semibold text-white uppercase tracking-wider mb-3">Portfolio</p>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">Projects</h2>
-          <p className="text-white/70 text-xl max-w-2xl mx-auto">Showcasing our successful Web3 collaborations</p>
+          <p className="text-xs sm:text-sm md:text-base font-semibold text-white uppercase tracking-wider mb-2 sm:mb-3">Portfolio</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 sm:mb-4 text-white">Projects</h2>
+          <p className="text-white/70 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-2">Showcasing our successful Web3 collaborations</p>
         </motion.div>
         
         <div className="relative w-full">
           {/* Carousel Container */}
           <motion.div 
-            className="flex justify-center items-center gap-6 md:gap-8 px-12 md:px-20"
+            className="flex justify-center items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8 px-4 sm:px-8 md:px-12 lg:px-20"
             style={{ perspective: '1200px' }}
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
@@ -210,8 +210,8 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                   }}
                   style={{ 
                     transformStyle: 'preserve-3d',
-                    width: '380px',
-                    height: '380px',
+                    width: 'clamp(200px, 90vw, 380px)',
+                    height: 'clamp(200px, 90vw, 380px)',
                     flexShrink: 0,
                     perspective: '1000px'
                   }}
@@ -248,30 +248,30 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                   >
                     {/* Front Side - Logo */}
                     <div 
-                      className="absolute inset-0 flex flex-col items-center gap-4 p-6 justify-center"
+                      className="absolute inset-0 flex flex-col items-center gap-2 sm:gap-3 md:gap-4 p-3 sm:p-4 md:p-6 justify-center"
                       style={{ 
                         backfaceVisibility: 'hidden',
                         WebkitBackfaceVisibility: 'hidden',
                         transform: 'rotateY(0deg)'
                       }}
                     >
-                      <div className="relative w-48 h-48 flex items-center justify-center">
+                      <div className="relative w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 flex items-center justify-center">
                         <Image 
                           src={project.image} 
                           alt={project.name} 
                           fill 
                           className="object-contain" 
-                          sizes="192px"
+                          sizes="(max-width: 640px) 96px, (max-width: 768px) 128px, 192px"
                         />
                       </div>
-                      <h3 className="text-white font-semibold text-lg group-hover:text-[#e21b1b] transition-colors">
+                      <h3 className="text-white font-semibold text-xs sm:text-sm md:text-base lg:text-lg group-hover:text-[#e21b1b] transition-colors px-2 text-center">
                         {project.name}
                       </h3>
                     </div>
 
                     {/* Back Side - Description & Deliverables */}
                     <div 
-                      className="absolute inset-0 flex flex-col items-start gap-2 p-4 justify-start overflow-hidden"
+                      className="absolute inset-0 flex flex-col items-start gap-1 sm:gap-2 p-2 sm:p-3 md:p-4 justify-start overflow-hidden"
                       style={{ 
                         backfaceVisibility: 'hidden',
                         WebkitBackfaceVisibility: 'hidden',
@@ -279,35 +279,35 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       }}
                     >
                       {/* Logo at top */}
-                      <div className="relative w-24 h-24 mx-auto mb-2 flex items-center justify-center">
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto mb-1 sm:mb-2 flex items-center justify-center">
                         <Image 
                           src={project.image} 
                           alt={project.name} 
                           fill 
                           className="object-contain" 
-                          sizes="96px"
+                          sizes="(max-width: 640px) 64px, (max-width: 768px) 80px, 96px"
                         />
                       </div>
                       
-                      <h3 className="text-white font-bold text-lg mb-2 w-full text-center border-b border-white/20 pb-1">
+                      <h3 className="text-white font-bold text-xs sm:text-sm md:text-base lg:text-lg mb-1 sm:mb-2 w-full text-center border-b border-white/20 pb-1">
                         {project.name}
                       </h3>
                       
                       {project.description && (
-                        <p className="text-white/80 text-xs leading-relaxed mb-2">
+                        <p className="text-white/80 text-[10px] sm:text-xs leading-relaxed mb-1 sm:mb-2 px-1">
                           {project.description}
                         </p>
                       )}
                       
                       {/* Deliverables and Services in same row */}
                       {((project.deliverables?.length ?? 0) > 0 || (project.services?.length ?? 0) > 0) && (
-                        <div className="w-full flex gap-2 mt-1">
+                        <div className="w-full flex flex-col sm:flex-row gap-1 sm:gap-2 mt-1">
                           {project.deliverables && project.deliverables.length > 0 && (
                             <div className="flex-1 min-w-0">
-                              <h4 className="text-[#e21b1b] font-semibold text-xs mb-1 whitespace-nowrap">Deliverables:</h4>
+                              <h4 className="text-[#e21b1b] font-semibold text-[10px] sm:text-xs mb-0.5 sm:mb-1">Deliverables:</h4>
                               <ul className="list-disc list-inside space-y-0.5">
                                 {project.deliverables.map((item, idx) => (
-                                  <li key={idx} className="text-white/80 text-[10px] leading-tight break-words">
+                                  <li key={idx} className="text-white/80 text-[9px] sm:text-[10px] leading-tight break-words">
                                     {item}
                                   </li>
                                 ))}
@@ -317,10 +317,10 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                           
                           {project.services && project.services.length > 0 && (
                             <div className="flex-1 min-w-0">
-                              <h4 className="text-[#e21b1b] font-semibold text-xs mb-1 whitespace-nowrap">Services:</h4>
+                              <h4 className="text-[#e21b1b] font-semibold text-[10px] sm:text-xs mb-0.5 sm:mb-1">Services:</h4>
                               <ul className="list-disc list-inside space-y-0.5">
                                 {project.services.map((item, idx) => (
-                                  <li key={idx} className="text-white/80 text-[10px] leading-tight break-words">
+                                  <li key={idx} className="text-white/80 text-[9px] sm:text-[10px] leading-tight break-words">
                                     {item}
                                   </li>
                                 ))}
@@ -331,7 +331,7 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
                       )}
                       
                       {!project.description && !project.deliverables && !project.services && (
-                        <p className="text-white/60 text-xs italic text-center w-full mt-2">
+                        <p className="text-white/60 text-[10px] sm:text-xs italic text-center w-full mt-1 sm:mt-2">
                           More details coming soon
                         </p>
                       )}

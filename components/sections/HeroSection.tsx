@@ -12,7 +12,7 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-[#880c0c]/20 via-[#aa0f0f]/20 to-[#e21b1b]/20 animate-gradient" />
       <motion.div
-        className="absolute top-20 left-20 w-72 h-72 bg-[#880c0c]/30 rounded-full blur-3xl"
+        className="absolute top-10 left-4 sm:top-20 sm:left-20 w-32 h-32 sm:w-48 sm:h-48 md:w-72 md:h-72 bg-[#880c0c]/30 rounded-full blur-3xl"
         animate={{
           x: [0, 100, 0],
           y: [0, 50, 0],
@@ -24,7 +24,7 @@ export default function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-20 w-96 h-96 bg-[#e21b1b]/30 rounded-full blur-3xl"
+        className="absolute bottom-10 right-4 sm:bottom-20 sm:right-20 w-40 h-40 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-[#e21b1b]/30 rounded-full blur-3xl"
         animate={{
           x: [0, -100, 0],
           y: [0, -50, 0],
@@ -36,7 +36,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 sm:py-16 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,17 +44,17 @@ export default function HeroSection() {
           className="text-center max-w-4xl mx-auto"
         >
           <motion.h1
-            className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="gradient-text">Voxity</span>
             <br />
-            <span className="text-white">Your Ultimate Web3 Partner</span>
+            <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Your Ultimate Web3 Partner</span>
           </motion.h1>
           <motion.p
-            className="text-2xl md:text-3xl text-gray-300 mb-8 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 mb-6 sm:mb-8 leading-relaxed px-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -77,18 +77,18 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="absolute top-1/4 left-10 text-[#e21b1b]/20"
+        className="absolute top-1/4 left-2 sm:left-10 text-[#e21b1b]/20 hidden sm:block"
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       >
-        <Sparkles size={40} />
+        <Sparkles size={24} className="sm:w-8 sm:h-8 md:w-10 md:h-10" />
       </motion.div>
       <motion.div
-        className="absolute bottom-1/4 right-10 text-[#aa0f0f]/20"
+        className="absolute bottom-1/4 right-2 sm:right-10 text-[#aa0f0f]/20 hidden sm:block"
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
       >
-        <Sparkles size={40} />
+        <Sparkles size={24} className="sm:w-8 sm:h-8 md:w-10 md:h-10" />
       </motion.div>
     </section>
   );

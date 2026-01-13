@@ -21,7 +21,7 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseStyles =
-    "px-10 py-5 rounded-lg font-semibold text-lg md:text-xl transition-all duration-300 relative overflow-hidden group";
+    "px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg font-semibold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 relative overflow-hidden group";
 
   const variants = {
     primary:

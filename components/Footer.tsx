@@ -20,9 +20,9 @@ export default function Footer() {
               alt="Voxity"
               width={120}
               height={40}
-              className="h-8 w-auto mb-4"
+              className="h-6 sm:h-7 md:h-8 w-auto mb-3 sm:mb-4"
             />
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-xs sm:text-sm">
               Your Ultimate Web3 Partner
             </p>
           </motion.div>
@@ -33,22 +33,22 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h4 className="text-white font-semibold mb-4">Contact</h4>
-            <div className="space-y-2 text-sm text-gray-400">
+            <h4 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Contact</h4>
+            <div className="space-y-2 text-xs sm:text-sm text-gray-400">
               <a
                 href="mailto:partnership.voxity@gmail.com"
-                className="flex items-center gap-2 hover:text-[#e21b1b] transition-colors"
+                className="flex items-center gap-1.5 sm:gap-2 hover:text-[#e21b1b] transition-colors break-all"
               >
-                <Mail size={16} />
-                <span>Email: partnership.voxity@gmail.com</span>
+                <Mail size={14} className="sm:w-4 sm:h-4 flex-shrink-0" />
+                <span className="break-all">Email: partnership.voxity@gmail.com</span>
               </a>
               <a
                 href="https://twitter.com/voxity"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-[#e21b1b] transition-colors"
+                className="flex items-center gap-1.5 sm:gap-2 hover:text-[#e21b1b] transition-colors"
               >
-                <Twitter size={16} />
+                <Twitter size={14} className="sm:w-4 sm:h-4 flex-shrink-0" />
                 <span>X: @voxity</span>
               </a>
             </div>
@@ -60,8 +60,8 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2 text-sm">
+            <h4 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+            <div className="space-y-2 text-xs sm:text-sm">
               <a
                 href="#about"
                 className="block text-gray-400 hover:text-[#e21b1b] transition-colors"
@@ -90,7 +90,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-sm text-gray-500">
+        <div className="border-t border-white/10 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Voxity. All rights reserved.</p>
         </div>
       </div>
