@@ -6,8 +6,54 @@ import GlassCard from "@/components/GlassCard";
 import Button from "@/components/Button";
 import SMTPForm from "@/components/SMTPForm";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email || !message) {
+      setSubmitStatus({ type: 'error', message: 'Please fill in all fields' });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          message,
+          subject: 'New Contact Form Submission from Voxity Website',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: 'Thank you! Your message has been sent successfully.' });
+        setEmail("");
+        setMessage("");
+      } else {
+        setSubmitStatus({ type: 'error', message: data.error || 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className="min-h-screen">
       <Navigation />
@@ -32,18 +78,39 @@ export default function ContactPage() {
               Ready to scale your Web3 project? Let&apos;s discuss how we can help.
             </p>
             <div className="glass-strong rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
-              <form className="space-y-3 sm:space-y-4">
+              {submitStatus.type && (
+                <div
+                  className={`mb-4 p-3 sm:p-4 rounded-lg text-sm sm:text-base ${
+                    submitStatus.type === 'success'
+                      ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                      : 'bg-red-500/20 text-red-400 border border-red-500/30'
+                  }`}
+                >
+                  {submitStatus.message}
+                </div>
+              )}
+              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#e21b1b]/50 transition-colors text-sm sm:text-base"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  disabled={isSubmitting}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#e21b1b]/50 transition-colors text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <textarea
                   placeholder="Tell us about your project"
                   rows={4}
-                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#e21b1b]/50 transition-colors resize-none text-sm sm:text-base"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                  disabled={isSubmitting}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#e21b1b]/50 transition-colors resize-none text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 />
-                <Button className="w-full">Send Proposal Request</Button>
+                <Button className="w-full" onClick={(e) => {}}>
+                  {isSubmitting ? 'Sending...' : 'Send Proposal Request'}
+                </Button>
               </form>
             </div>
           </motion.div>
