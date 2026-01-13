@@ -24,7 +24,7 @@ function createTransporter(port: number, secure: boolean) {
     pool: false,
     maxConnections: 1,
     maxMessages: 3,
-  });
+  } as nodemailer.TransportOptions);
 }
 
 export async function POST(request: NextRequest) {
