@@ -70,7 +70,7 @@ export default function ServiceModal({
               <div className="flex items-center justify-between p-4 sm:p-5 md:p-6 border-b border-white/10">
                 <div className="flex items-center gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0">
                   <div className="p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br from-[#880c0c]/30 to-[#e21b1b]/30 flex-shrink-0">
-                    <Icon className="text-[#e21b1b]" size={24} className="sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                    <Icon className="text-[#e21b1b] w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                   </div>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white truncate">{title}</h2>
                 </div>
@@ -79,7 +79,7 @@ export default function ServiceModal({
                   className="p-2 sm:p-2.5 md:p-3 rounded-lg hover:bg-white/10 transition-colors text-gray-400 hover:text-white flex-shrink-0 ml-2"
                   aria-label="Close modal"
                 >
-                  <X size={20} className="sm:w-7 sm:h-7 md:w-8 md:h-8" />
+                  <X className="w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8" />
                 </button>
               </div>
 

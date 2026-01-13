@@ -81,14 +81,14 @@ export default function HeroSection() {
         animate={{ y: [0, -20, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       >
-        <Sparkles size={24} className="sm:w-8 sm:h-8 md:w-10 md:h-10" />
+        <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
       </motion.div>
       <motion.div
         className="absolute bottom-1/4 right-2 sm:right-10 text-[#aa0f0f]/20 hidden sm:block"
         animate={{ y: [0, 20, 0] }}
         transition={{ duration: 8, repeat: Infinity }}
       >
-        <Sparkles size={24} className="sm:w-8 sm:h-8 md:w-10 md:h-10" />
+        <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />
       </motion.div>
     </section>
   );

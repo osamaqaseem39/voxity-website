@@ -40,7 +40,7 @@ export default function PerspectivePage({ params }: PageProps) {
                 href="/perspectives"
                 className="inline-flex items-center gap-2 text-[#e21b1b] hover:text-[#aa0f0f] transition-colors group"
               >
-                <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+                <ArrowLeft className="w-[18px] h-[18px] group-hover:-translate-x-1 transition-transform" />
                 <span>Back to Perspectives</span>
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default function PerspectivePage({ params }: PageProps) {
               href="/perspectives"
               className="inline-flex items-center gap-2 text-gray-400 hover:text-[#e21b1b] transition-colors mb-6 sm:mb-8 group text-sm sm:text-base"
             >
-              <ArrowLeft size={16} className="sm:w-[18px] sm:h-[18px] group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft className="w-4 h-4 sm:w-[18px] sm:h-[18px] group-hover:-translate-x-1 transition-transform" />
               <span>Back to Perspectives</span>
             </Link>
 
@@ -76,11 +76,11 @@ export default function PerspectivePage({ params }: PageProps) {
                 {perspective.category}
               </span>
               <div className="flex items-center gap-1.5 sm:gap-2 text-gray-400 text-xs sm:text-sm md:text-base">
-                <Calendar size={14} className="sm:w-4 sm:h-4" />
+                <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>{perspective.date}</span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2 text-gray-400 text-xs sm:text-sm md:text-base">
-                <Clock size={14} className="sm:w-4 sm:h-4" />
+                <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 <span>{perspective.readTime}</span>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function PerspectivePage({ params }: PageProps) {
               href="/perspectives"
               className="inline-flex items-center gap-2 text-[#e21b1b] hover:text-[#aa0f0f] transition-colors group text-sm sm:text-base"
             >
-              <ArrowLeft size={16} className="sm:w-[18px] sm:h-[18px] group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft className="w-4 h-4 sm:w-[18px] sm:h-[18px] group-hover:-translate-x-1 transition-transform" />
               <span>View All Perspectives</span>
             </Link>
           </div>

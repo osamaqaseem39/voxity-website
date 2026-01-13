@@ -39,7 +39,7 @@ export default function Footer() {
                 href="mailto:partnership.voxity@gmail.com"
                 className="flex items-center gap-1.5 sm:gap-2 hover:text-[#e21b1b] transition-colors break-all"
               >
-                <Mail size={14} className="sm:w-4 sm:h-4 flex-shrink-0" />
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                 <span className="break-all">Email: partnership.voxity@gmail.com</span>
               </a>
               <a
@@ -48,7 +48,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 sm:gap-2 hover:text-[#e21b1b] transition-colors"
               >
-                <Twitter size={14} className="sm:w-4 sm:h-4 flex-shrink-0" />
+                <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
                 <span>X: @voxity</span>
               </a>
             </div>

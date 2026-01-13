@@ -57,7 +57,7 @@ export default function PerspectivesSection({ perspectives }: PerspectivesSectio
                   <GlassCard hover className="h-full flex flex-col cursor-pointer group">
                     <div className="flex items-start gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4">
                       <div className="p-2 sm:p-2.5 md:p-3 rounded-lg bg-gradient-to-br from-[#880c0c]/20 to-[#e21b1b]/20 flex-shrink-0">
-                        <Icon className="text-[#e21b1b]" size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
+                        <Icon className="text-[#e21b1b] w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                       </div>
                       <div className="flex-1">
                         <span className="inline-block px-2 sm:px-2.5 md:px-3 py-0.5 sm:py-1 text-xs sm:text-sm font-semibold text-[#e21b1b] bg-[#e21b1b]/10 rounded-full mb-2 sm:mb-3">
@@ -71,12 +71,12 @@ export default function PerspectivesSection({ perspectives }: PerspectivesSectio
                     <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 flex-1">{perspective.excerpt}</p>
                     <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 pt-3 sm:pt-4 border-t border-white/10">
                       <div className="flex items-center gap-1 sm:gap-2">
-                        <Calendar size={12} className="sm:w-3.5 sm:h-3.5" />
+                        <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         <span>{perspective.date}</span>
                       </div>
                       <div className="flex items-center gap-1 sm:gap-2 text-[#e21b1b] group-hover:gap-2 sm:group-hover:gap-3 transition-all">
                         <span>{perspective.readTime}</span>
-                        <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" />
+                        <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </div>
                     </div>
                   </GlassCard>

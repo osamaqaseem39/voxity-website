@@ -20,7 +20,7 @@ export default function NotFound() {
               href="/perspectives"
               className="inline-flex items-center gap-2 text-[#e21b1b] hover:text-[#aa0f0f] transition-colors group"
             >
-              <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
+              <ArrowLeft className="w-[18px] h-[18px] group-hover:-translate-x-1 transition-transform" />
               <span>Back to Perspectives</span>
             </Link>
           </div>
