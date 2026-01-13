@@ -108,7 +108,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-black/30 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-[#e21b1b]/50 transition-colors resize-none text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 />
-                <Button className="w-full" onClick={(e) => {}}>
+                <Button className="w-full" type="submit" disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send Proposal Request'}
                 </Button>
               </form>

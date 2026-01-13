@@ -10,7 +10,9 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "outline";
   className?: string;
   href?: string;
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -19,6 +21,8 @@ export default function Button({
   className,
   href,
   onClick,
+  type,
+  disabled = false,
 }: ButtonProps) {
   const baseStyles =
     "px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg font-semibold text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 relative overflow-hidden group";
@@ -33,10 +37,12 @@ export default function Button({
   };
 
   const content = (
-    <motion.div
-      className={cn(baseStyles, variants[variant], className)}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <motion.button
+      type={type || "button"}
+      disabled={disabled}
+      className={cn(baseStyles, variants[variant], className, disabled && "opacity-50 cursor-not-allowed")}
+      whileHover={disabled ? {} : { scale: 1.05 }}
+      whileTap={disabled ? {} : { scale: 0.95 }}
       onClick={onClick}
     >
       <span className="relative z-10">{children}</span>
@@ -46,7 +52,7 @@ export default function Button({
           initial={false}
         />
       )}
-    </motion.div>
+    </motion.button>
   );
 
   if (href) {
@@ -55,13 +61,39 @@ export default function Button({
     if (isInternal) {
       return (
         <Link href={href} className="inline-block">
-          {content}
+          <motion.div
+            className={cn(baseStyles, variants[variant], className)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onClick}
+          >
+            <span className="relative z-10">{children}</span>
+            {variant !== "outline" && (
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-[#aa0f0f] to-[#e21b1b] opacity-0 group-hover:opacity-100 transition-opacity"
+                initial={false}
+              />
+            )}
+          </motion.div>
         </Link>
       );
     }
     return (
       <a href={href} className="inline-block">
-        {content}
+        <motion.div
+          className={cn(baseStyles, variants[variant], className)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={onClick}
+        >
+          <span className="relative z-10">{children}</span>
+          {variant !== "outline" && (
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-[#aa0f0f] to-[#e21b1b] opacity-0 group-hover:opacity-100 transition-opacity"
+              initial={false}
+            />
+          )}
+        </motion.div>
       </a>
     );
   }
