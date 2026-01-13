@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Twitter } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -43,13 +43,13 @@ export default function Footer() {
                 <span className="break-all">Email: partnership.voxity@gmail.com</span>
               </a>
               <a
-                href="https://twitter.com/voxity"
+                href="https://www.linkedin.com/company/voxityio/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 sm:gap-2 hover:text-[#e21b1b] transition-colors"
               >
-                <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
-                <span>X: @voxity</span>
+                <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                <span>LinkedIn: Voxity</span>
               </a>
             </div>
           </motion.div>

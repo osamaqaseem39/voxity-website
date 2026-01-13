@@ -35,14 +35,14 @@ export default function ContactSection() {
                   </a>
                 </div>
                 <div>
-                  <p className="text-sm sm:text-base text-gray-500 mb-1">X (Twitter):</p>
+                  <p className="text-sm sm:text-base text-gray-500 mb-1">LinkedIn:</p>
                   <a
-                    href="https://twitter.com/voxity"
+                    href="https://www.linkedin.com/company/voxityio/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#e21b1b] hover:text-[#aa0f0f] transition-colors text-sm sm:text-base"
                   >
-                    @voxity
+                    Voxity
                   </a>
                 </div>
               </div>
